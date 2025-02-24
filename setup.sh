@@ -15,9 +15,8 @@ sudo apt install ripgrep unzip build-essential
 echo "*** Install LSP pre reqs"
 sudo apt install nodejs npm
 
-echo "*** Install nvChad"
-git clone https://github.com/NvChad/starter ~/.config/nvim && nvim
-rm -rf ~/.config/nvim/.git
+echo "*** Install config"
+cp -r ./nvim ~/.config/
 
 echo "*** Post install instructions"
 echo " * Install nerd font like JetBrains in your terminal, and assign it as the default font"
