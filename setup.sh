@@ -15,9 +15,6 @@ sudo apt install ripgrep unzip build-essential
 echo "*** Install LSP pre reqs"
 sudo apt install nodejs npm
 
-echo "*** Install config"
-cp -r ./nvim ~/.config/
-
 echo "*** Post install instructions"
 echo " * Install nerd font like JetBrains in your terminal, and assign it as the default font"
 echo " * run nvim, and run :MasonInstallAll, install ruff, black, pyright"
