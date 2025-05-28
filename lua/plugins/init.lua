@@ -14,11 +14,41 @@ return {
   },
   {
     "olimorris/codecompanion.nvim",
-    opts = {},
+    opts = {
+      adapters = {
+        ollama = function()
+          return require("codecompanion.adapters").extend("ollama", {
+            env = {
+              url = "http://localhost:11434", -- Ollama API endpoint
+            },
+            parameters = {
+              sync = true, -- Makes requests blocking; useful for CLI-style usage
+            },
+            schema = {
+              model = { default="deepseek-coder:33b"},
+            }
+          })
+        end,
+      },
+      strategies = {
+        chat = { adapter = "ollama" },
+        inline = { adapter = "ollama" },
+        cmd = { adapter = "ollama" },
+      },
+      opts = {
+        log_level = "DEBUG"
+      }
+    },
+
     dependencies = {
-      "nvim-lua/plenary.nvim",
+      { "nvim-lua/plenary.nvim", branch = "master" }, -- ensure master branch for compatibility
       "nvim-treesitter/nvim-treesitter",
     },
+    init = function()
+      vim.g.codecompanion_adapter = "ollama" -- helpful for defaults
+      vim.g.codecompanion_log_level = "debug"
+    end,
+    event = "VeryLazy", -- ensures lazy loading
   },
   {
     "MeanderingProgrammer/render-markdown.nvim",
