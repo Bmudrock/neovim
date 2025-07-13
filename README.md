@@ -34,4 +34,4 @@ git clone https://github.com/Bmudrock/neovim ~/.config/nvim
 * Install a Nerd-Font (ie JetBrains) as your terminal font.
 * run `nvim` and allow it to install the plugins
 * while in `nvim` run: `:MasonInstallAll`, find and install (press 'i' on the line): ruff, black, pyright
-
+* Install TreeSitter profiles, run: `:TSInstall python`
