@@ -6,11 +6,7 @@ return {
         ollama = function()
           return require("codecompanion.adapters").extend("ollama", {
             env = {
-              url = "http://llm.glider-eng.com:11434", -- Ollama API endpoint
-              system = "You are a code assistant. When given an @editor request, return a unified diff with line numbers only. Do not explain."
-            },
-            parameters = {
-              sync = true, -- Makes requests blocking; useful for CLI-style usage
+              url = "http://llm.glider-eng.com:11434",
             },
             schema = {
               model = { default="deepseek-coder-v2:16b"},
