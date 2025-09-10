@@ -1,6 +1,12 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
+    python = { "isort", "black" },
+    formatters = {
+      black = {
+        prepend_args = { "--line-length", "100"}
+      }
+    }
     -- css = { "prettier" },
     -- html = { "prettier" },
   },
