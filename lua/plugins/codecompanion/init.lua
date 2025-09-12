@@ -3,16 +3,19 @@ return {
     "olimorris/codecompanion.nvim",
     opts = {
       adapters = {
-        ollama = function()
-          return require("codecompanion.adapters").extend("ollama", {
-            env = {
-              url = "http://llm.glider-eng.com:11434",
-            },
-            schema = {
-              model = { default="deepseek-coder-v2:16b"},
-            }
-          })
-        end,
+        http = {
+          ollama = function()
+            name = "ollama"
+            return require("codecompanion.adapters").extend("ollama", {
+              env = {
+                url = "http://llm.glider-eng.com:11434",
+              },
+              schema = {
+                model = { default="deepseek-coder-v2:16b"},
+              }
+            })
+          end,
+        }
       },
       strategies = {
         chat = { adapter = "ollama" },
