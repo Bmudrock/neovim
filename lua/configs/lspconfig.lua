@@ -1,6 +1,11 @@
 require("nvchad.configs.lspconfig").defaults()
 
-local servers = { "html", "cssls", "pyright" }
+vim.lsp.config('gopls', {
+    cmd = { 'gopls' },
+    filetypes = { 'go' },
+})
+
+local servers = { "html", "cssls", "pyright", "gopls" }
 vim.lsp.enable(servers)
 
 --local nvlsp = require "nvchad.configs.lspconfig"
