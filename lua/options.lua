@@ -14,21 +14,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 })
 vim.opt.spell = true
 
-
-vim.api.nvim_create_augroup("AutoFormat", {})
-
-vim.api.nvim_create_autocmd(
-    "BufWritePost",
-    {
-        pattern = "*.py",
-        group = "AutoFormat",
-        callback = function()
-            vim.cmd("silent !black --quiet %")
-            vim.cmd("edit")
-        end,
-    }
-)
-
 -- local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
 -- local o = vim.o
