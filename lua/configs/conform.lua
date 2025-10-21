@@ -1,7 +1,7 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    python = { "isort", "black" },
+    python = { "isort", "black", "pyright", "ruff"},
     formatters = {
       black = {
         prepend_args = { "--line-length", "100"}
