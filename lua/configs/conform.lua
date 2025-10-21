@@ -5,10 +5,15 @@ local options = {
     formatters = {
       black = {
         prepend_args = { "--line-length", "100"}
-      }
-    }
+      },
+    },
     -- css = { "prettier" },
     -- html = { "prettier" },
+  },
+  format_on_save = {
+    timeout_ms = 1000,
+    lsp_fallback = true,
+    async = true
   },
 
   -- format_on_save = {
