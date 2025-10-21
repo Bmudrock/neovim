@@ -19,6 +19,9 @@ return {
       return {
         defaults = {
           file_ignore_patterns = { "__pycache__", "venv", "%.pyc" }
+        },
+        ensure_installed = {
+          "vim", "lua", "python", "html", "css", "go", "terraform"
         }
       }
     end
