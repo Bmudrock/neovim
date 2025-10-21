@@ -11,7 +11,7 @@ return {
                 url = "http://llm.glider-eng.com:11434",
               },
               schema = {
-                model = { default="deepseek-coder-v2:16b"},
+                model = { default="gpt-oss:20b"},
               }
             })
           end,
